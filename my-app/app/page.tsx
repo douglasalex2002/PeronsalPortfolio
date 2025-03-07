@@ -17,22 +17,28 @@ const page = () => {
       </div>
       <div id='AboutMe'>
         <img src="/pictures/headshot_circle.png" alt="Professional Headshot" width="450" height="450" className="about-me-items"/>
-        <p className="about-me-items" id="about-me-text">Hello, I am <span id="my-name">Alex Douglas</span>...</p>
+        <p className="about-me-items" id="about-me-text">Hello, I am <span id="my-name">Alex Douglas</span>. Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisis ante nibh sit urna porttitor ornare tristique enim. Tempor dictum nibh volutpat enim eget aliquet maecenas.</p>
       </div>
       <div id="featuredWork">
-        <h1 className="section-title">Featured Work</h1>
+        <h1 className="section-title" id="featured-work-title">Featured Work</h1>
         <div id="featured-work-projects">
           <div className='single-featured-work'>
-            <img src='/pictures/placeholder.png' alt="Place Holder"></img>
-            <p className="featured-text">One</p>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
+            <h1 className='featured-title'>Title One</h1>
+            <p className="featured-text">Languages:</p>
+            <p className="featured-text">Frameworks:</p>
           </div>
           <div className='single-featured-work'>
-            <img src='/pictures/placeholder.png' alt="Place Holder"></img>
-            <p className="featured-text">Two</p>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
+            <h1 className='featured-title'>Title Two</h1>
+            <p className="featured-text">Languages:</p>
+            <p className="featured-text">Frameworks:</p>
           </div>
           <div className='single-featured-work'>
-            <img src='/pictures/placeholder.png' alt="Place Holder"></img>
-            <p className="featured-text">Three</p>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
+            <h1 className='featured-title'>Title Three</h1>
+            <p className="featured-text">Languages:</p>
+            <p className="featured-text">Frameworks:</p>
           </div>
         </div>
       </div>
