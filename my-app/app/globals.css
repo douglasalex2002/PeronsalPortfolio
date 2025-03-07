@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@import url(https://fonts.googleapis.com/css?family=Poppins:b);
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #232323;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -22,5 +24,119 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+}
+
+/* Add a black background color to the top navigation */
+#top-row {
+  padding: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Style the links inside the navigation bar */
+#top-row a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 6px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+/* Change the color of links on hover */
+#top-row a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+#top-row a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.top-row-left {
+  display: flex;
+  gap: 20px;
+}
+
+#AD-button {
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 5px;
+}
+
+.left-buttons {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#contact-me {
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 5px;
+}
+
+.colored-rectangle {
+  background-color: #663399;
+  height: 35px;
+  width: 100%
+}
+
+.section-title {
+  font-size: 50px;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#AboutMe {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#featuredWork {
+  background-color: #ffffff;
+  color: #232323;
+}
+
+#Projects {
+  background-color: #ffffff;
+  color: #232323;
+}
+
+#my-name {
+  color: #663399;
+}
+
+#about-me-text {
+  font-size: 50px;
+}
+
+.about-me-items {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#featured-work-projects {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.single-featured-work {
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 10px;
+  margin: 20px
 }
