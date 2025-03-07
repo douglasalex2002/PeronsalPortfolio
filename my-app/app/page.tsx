@@ -4,6 +4,7 @@ const page = () => {
   return (
     <>
       <div className='colored-rectangle'></div>
+      <div id='space'></div>
       <div id='top-row'>
         <div className='top-row-left'>
           <a href="#top-row" className="left-buttons" id='AD-button'>AD</a>

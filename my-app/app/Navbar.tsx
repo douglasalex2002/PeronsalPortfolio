@@ -25,8 +25,17 @@ export default function Navbar() {
         showNavbar ? styles.slideDown : ''
       }`}
     >
-      <h1>My Website</h1>
-      {}
+      <div id='top-row'>
+        <div className='top-row-left'>
+          <a href="#top-row" className="left-buttons" id='AD-button'>AD</a>
+          <a href="#AboutMe" className="left-buttons" id='hover-underline'>About Me</a>
+          <a href="#Experience" className="left-buttons" id='hover-underline'>Experience</a>
+          <a href="#Projects" className="left-buttons" id='hover-underline'>Projects</a>
+        </div>
+        <div>
+          <a href="#ContactMe" className='topButtons' id="contact-me">Contact Me</a>
+        </div>
+      </div>
     </nav>
   );
 }
