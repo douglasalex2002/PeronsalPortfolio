@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url(https://fonts.googleapis.com/css?family=Poppins:b);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;450;525;600;900&display=swap');
 
 :root {
   --background: #232323;
@@ -201,3 +201,68 @@ body {
   z-index: 5;
 }
 
+#Experience  {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#Experience > div {
+  padding: 10px;
+  margin: 30px;
+}
+
+#left-experience {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#right-experience {
+  background-color: #ffffff;
+  border-radius: 20px;
+  width: 57%;
+}
+
+#experience-title {
+  font-size: 57px;
+}
+
+#right-experience > div {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  color: #232323;
+}
+
+.job-text {
+  margin-left: 15px;
+}
+
+.job-role {
+  color: #663399;
+  font-size: 25px;
+}
+
+.company-name {
+  font-size: 22px;
+}
+
+.job-dates {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: gray;  
+  font-weight: 525;
+}
+
+.job-bullets {
+  font-weight: 450;
+  font-size: 18px;
+}
+
+.portfolio-img {
+  width: 50px;   /* or auto if you want to use the image’s natural size */
+  height: 35px;
+  object-fit: contain;
+  margin-top: 5px;
+}

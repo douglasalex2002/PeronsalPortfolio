@@ -46,15 +46,38 @@ const page = () => {
         </div>
       </div>
       <div id='Experience'>
-        <h1 className="section-title">
-          Experience
-        </h1>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi dictumst nam nam, maximus eu commodo. In sodales elementum vivamus torquent augue ultricies commodo augue. Viverra tellus vehicula porta ornare tristique egestas sit id? Elit eleifend diam eu porttitor rhoncus felis elementum vivamus et. Viverra eleifend dolor urna, iaculis penatibus etiam. Ipsum curabitur eu suscipit bibendum auctor conubia nibh.
-
-          Conubia mollis eleifend maecenas sodales primis quis. Vestibulum etiam et ipsum mattis commodo vehicula congue ligula. Ipsum auctor nostra elementum, varius litora sapien risus lacus torquent. Pretium integer senectus rutrum lacus congue penatibus pretium sollicitudin. Vitae efficitur posuere curae commodo sodales aliquam orci quis aenean. Nam ullamcorper parturient sit sollicitudin netus arcu; consequat nunc libero. Non fusce sapien; justo taciti finibus lacus vestibulum parturient. Ad efficitur rhoncus rutrum, scelerisque dis vestibulum fermentum fusce. Elit euismod nibh inceptos donec volutpat.
-
-          Amet etiam enim sem sit adipiscing. Nullam enim imperdiet egestas euismod, varius dis ante hac! Himenaeos augue est magna justo fermentum hac augue. Morbi tempus potenti dui rhoncus rutrum tempor facilisis. Dolor netus ullamcorper porta convallis sodales malesuada proin amet. Malesuada eleifend quis maecenas quam at mattis feugiat. Interdum lobortis eu enim nibh nisi vestibulum eu sodales. Volutpat pretium lorem taciti neque elit maecenas feugiat tellus.        </p>
+        <div id="left-experience">
+          <div id='experience-title'>
+            Experience
+          </div>
+        </div>
+        <div id="right-experience">
+          <div>
+            <img src='/pictures/portfolio.png' alt="Portfolio Picture" className='portfolio-img'></img>
+            <div className='job-text'>
+              <p className='job-role'>Software Engineer Intern</p>
+              <p className='company-name'>RevSpring</p>
+              <p className='job-dates'>Jun 2025 - Aug 2025</p>
+              <div className='job-bullets'>
+                <p>- Lorem ipsum odor amet, consectetuer adipiscing elit. Accumsan suspendisse duis non torquent blandit inceptos potenti pharetra. Lacus natoque condimentum; finibus interdum ipsum mollis.</p>
+                <p>- Lorem ipsum odor amet, consectetuer adipiscing elit. Accumsan suspendisse duis non torquent blandit inceptos potenti pharetra. Lacus natoque condimentum; finibus interdum ipsum mollis.</p>
+                <p>- Lorem ipsum odor amet, consectetuer adipiscing elit. Accumsan suspendisse duis non torquent blandit inceptos potenti pharetra. Lacus natoque condimentum; finibus interdum ipsum mollis.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src='/pictures/portfolio.png' alt="Portfolio Picture" className='portfolio-img'></img>
+            <div className='job-text'>
+              <p className='job-role'>Job Site Manager</p>
+              <p className='company-name'>WaterFront Restoration</p>
+              <p className='job-dates'>Jun 2022 - Aug 2024 (Seasonal)</p>
+              <div className='job-bullets'>
+                <p>- Led and collaborated with a team of 5 to successfully complete projects on time and within budget, ensuring smooth workflow and task delegation.</p>
+                <p>- Balanced quality workmanship with time efficiency, optimizing processes to meet project deadlines without compromising standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div id='Projects'>
         <h1 className="section-title">
