@@ -39,7 +39,7 @@ body {
 /* Style the links inside the navigation bar */
 #top-row a {
   float: left;
-  color: #f2f2f2;
+  color: #ffffff;
   text-align: center;
   padding-left: 6px;
   padding-right: 6px;
@@ -49,7 +49,8 @@ body {
 
 /* Change the color of links on hover */
 #top-row a:hover {
-  background-color: #ddd;
+  background-color: #ffffff;
+  color: black;
 }
 
 .top-row-left {
@@ -89,6 +90,7 @@ body {
 }
 
 #AboutMe {
+  padding-top: 30px;
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -166,3 +168,36 @@ body {
   background-color: #232323;
   height: 45px;
 }
+
+.projects-grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.projects-grid-container > div {
+  width: 400px;
+  height: 400px;
+  border-style: solid;
+  border-radius: 17px;
+  border-color: #232323;
+  border-width: 8px;
+  color: #663399;
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-grid-container > div:hover {
+  transform: scale(1.05);
+  z-index: 5;
+}
+

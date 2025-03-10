@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div id='top-row'>
         <div className='top-row-left'>
-          <a href="#top-row" className="left-buttons" id='AD-button'>AD</a>
+          <a href="#" className="left-buttons" id='AD-button'>AD</a>
           <a href="#AboutMe" className="left-buttons" id='hover-underline'>About Me</a>
           <a href="#Experience" className="left-buttons" id='hover-underline'>Experience</a>
           <a href="#Projects" className="left-buttons" id='hover-underline'>Projects</a>

@@ -7,7 +7,9 @@ const page = () => {
       <div id='space'></div>
       <div id='top-row'>
         <div className='top-row-left'>
-          <a href="#top-row" className="left-buttons" id='AD-button'>AD</a>
+          <a href="#" className="left-buttons" id='AD-button'>
+            <span>AD</span>
+          </a>
           <a href="#AboutMe" className="left-buttons" id='hover-underline'>About Me</a>
           <a href="#Experience" className="left-buttons" id='hover-underline'>Experience</a>
           <a href="#Projects" className="left-buttons" id='hover-underline'>Projects</a>
@@ -17,7 +19,7 @@ const page = () => {
         </div>
       </div>
       <div id='AboutMe'>
-        <img src="/pictures/headshot_circle.png" alt="Professional Headshot" width="450" height="450" className="about-me-items"/>
+        <img src="/pictures/headshot_circle.png" alt="Professional Headshot" width="450" height="450" className="about-me-items" />
         <p className="about-me-items" id="about-me-text">Hello, I am <span id="my-name">Alex Douglas</span>. Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisis ante nibh sit urna porttitor ornare tristique enim. Tempor dictum nibh volutpat enim eget aliquet maecenas.</p>
       </div>
       <div id="featuredWork">
@@ -27,19 +29,19 @@ const page = () => {
             <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
             <h1 className='featured-title'>Title One</h1>
             <p className="featured-text">Languages:</p>
-            <p className="featured-text">Frameworks:</p>
+            <p className="featured-text">Other Tools:</p>
           </div>
           <div className='single-featured-work'>
             <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
             <h1 className='featured-title'>Title Two</h1>
             <p className="featured-text">Languages:</p>
-            <p className="featured-text">Frameworks:</p>
+            <p className="featured-text">Other Tools:</p>
           </div>
           <div className='single-featured-work'>
             <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
             <h1 className='featured-title'>Title Three</h1>
             <p className="featured-text">Languages:</p>
-            <p className="featured-text">Frameworks:</p>
+            <p className="featured-text">Other Tools:</p>
           </div>
         </div>
       </div>
@@ -48,22 +50,54 @@ const page = () => {
           Experience
         </h1>
         <p>
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi dictumst nam nam, maximus eu commodo. In sodales elementum vivamus torquent augue ultricies commodo augue. Viverra tellus vehicula porta ornare tristique egestas sit id? Elit eleifend diam eu porttitor rhoncus felis elementum vivamus et. Viverra eleifend dolor urna, iaculis penatibus etiam. Ipsum curabitur eu suscipit bibendum auctor conubia nibh.
+          Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi dictumst nam nam, maximus eu commodo. In sodales elementum vivamus torquent augue ultricies commodo augue. Viverra tellus vehicula porta ornare tristique egestas sit id? Elit eleifend diam eu porttitor rhoncus felis elementum vivamus et. Viverra eleifend dolor urna, iaculis penatibus etiam. Ipsum curabitur eu suscipit bibendum auctor conubia nibh.
 
-Conubia mollis eleifend maecenas sodales primis quis. Vestibulum etiam et ipsum mattis commodo vehicula congue ligula. Ipsum auctor nostra elementum, varius litora sapien risus lacus torquent. Pretium integer senectus rutrum lacus congue penatibus pretium sollicitudin. Vitae efficitur posuere curae commodo sodales aliquam orci quis aenean. Nam ullamcorper parturient sit sollicitudin netus arcu; consequat nunc libero. Non fusce sapien; justo taciti finibus lacus vestibulum parturient. Ad efficitur rhoncus rutrum, scelerisque dis vestibulum fermentum fusce. Elit euismod nibh inceptos donec volutpat.
+          Conubia mollis eleifend maecenas sodales primis quis. Vestibulum etiam et ipsum mattis commodo vehicula congue ligula. Ipsum auctor nostra elementum, varius litora sapien risus lacus torquent. Pretium integer senectus rutrum lacus congue penatibus pretium sollicitudin. Vitae efficitur posuere curae commodo sodales aliquam orci quis aenean. Nam ullamcorper parturient sit sollicitudin netus arcu; consequat nunc libero. Non fusce sapien; justo taciti finibus lacus vestibulum parturient. Ad efficitur rhoncus rutrum, scelerisque dis vestibulum fermentum fusce. Elit euismod nibh inceptos donec volutpat.
 
-Amet etiam enim sem sit adipiscing. Nullam enim imperdiet egestas euismod, varius dis ante hac! Himenaeos augue est magna justo fermentum hac augue. Morbi tempus potenti dui rhoncus rutrum tempor facilisis. Dolor netus ullamcorper porta convallis sodales malesuada proin amet. Malesuada eleifend quis maecenas quam at mattis feugiat. Interdum lobortis eu enim nibh nisi vestibulum eu sodales. Volutpat pretium lorem taciti neque elit maecenas feugiat tellus.        </p>
+          Amet etiam enim sem sit adipiscing. Nullam enim imperdiet egestas euismod, varius dis ante hac! Himenaeos augue est magna justo fermentum hac augue. Morbi tempus potenti dui rhoncus rutrum tempor facilisis. Dolor netus ullamcorper porta convallis sodales malesuada proin amet. Malesuada eleifend quis maecenas quam at mattis feugiat. Interdum lobortis eu enim nibh nisi vestibulum eu sodales. Volutpat pretium lorem taciti neque elit maecenas feugiat tellus.        </p>
       </div>
       <div id='Projects'>
         <h1 className="section-title">
           Projects
         </h1>
-        <p>
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi dictumst nam nam, maximus eu commodo. In sodales elementum vivamus torquent augue ultricies commodo augue. Viverra tellus vehicula porta ornare tristique egestas sit id? Elit eleifend diam eu porttitor rhoncus felis elementum vivamus et. Viverra eleifend dolor urna, iaculis penatibus etiam. Ipsum curabitur eu suscipit bibendum auctor conubia nibh.
-
-Conubia mollis eleifend maecenas sodales primis quis. Vestibulum etiam et ipsum mattis commodo vehicula congue ligula. Ipsum auctor nostra elementum, varius litora sapien risus lacus torquent. Pretium integer senectus rutrum lacus congue penatibus pretium sollicitudin. Vitae efficitur posuere curae commodo sodales aliquam orci quis aenean. Nam ullamcorper parturient sit sollicitudin netus arcu; consequat nunc libero. Non fusce sapien; justo taciti finibus lacus vestibulum parturient. Ad efficitur rhoncus rutrum, scelerisque dis vestibulum fermentum fusce. Elit euismod nibh inceptos donec volutpat.
-
-Amet etiam enim sem sit adipiscing. Nullam enim imperdiet egestas euismod, varius dis ante hac! Himenaeos augue est magna justo fermentum hac augue. Morbi tempus potenti dui rhoncus rutrum tempor facilisis. Dolor netus ullamcorper porta convallis sodales malesuada proin amet. Malesuada eleifend quis maecenas quam at mattis feugiat. Interdum lobortis eu enim nibh nisi vestibulum eu sodales. Volutpat pretium lorem taciti neque elit maecenas feugiat tellus.        </p>
+        <div className='projects-grid-container'>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project One</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Two</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Three</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Four</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Five</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Six</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Seven</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Eight</p>
+          </div>
+          <div>
+            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <p>Project Nine</p>
+          </div>
+        </div>
       </div>
     </>
   )
