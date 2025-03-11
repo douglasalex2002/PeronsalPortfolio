@@ -28,7 +28,6 @@ body {
   font-weight: 900;
 }
 
-/* Add a black background color to the top navigation */
 #top-row {
   padding: 6px;
   overflow: hidden;
@@ -36,7 +35,6 @@ body {
   justify-content: space-around;
 }
 
-/* Style the links inside the navigation bar */
 #top-row a {
   float: left;
   color: #ffffff;
@@ -47,7 +45,6 @@ body {
   font-size: 30px;
 }
 
-/* Change the color of links on hover */
 #top-row a:hover {
   background-color: #ffffff;
   color: black;
@@ -76,7 +73,7 @@ body {
 }
 
 .colored-rectangle {
-  background-color: #BF40BF;
+  background-color: #663399;
   height: 35px;
   width: 100%
 }
@@ -108,7 +105,7 @@ body {
 }
 
 #my-name {
-  color: #BF40BF;
+  color: #663399;
 }
 
 #about-me-text {
@@ -140,7 +137,21 @@ body {
   border-radius: 50px;
   margin: 20px;
   transition: 0.5s;
-  background-color: #232323;
+}
+
+#left-single {
+  background-color: #CCDCFD;
+  border-color: #CCDCFD;
+}
+
+#middle-single {
+  background-color: #E8BFFB;
+  border-color: #E8BFFB;
+}
+
+#right-single {
+  background-color: #BBBEFE;
+  border-color: #BBBEFE;
 }
 
 .single-featured-work:hover {
@@ -156,14 +167,14 @@ body {
 .featured-title {
   text-align: center;
   font-size: 30px;
-  color: #BF40BF;
+  color: #232323;
 }
 
 .featured-text {
   text-align: left;
   padding-left: 45px;
   font-size: 17px;
-  color: #ffffff;
+  color: #232323;
 }
 
 #space {
@@ -186,8 +197,8 @@ body {
   border-style: solid;
   border-radius: 17px;
   border-color: #232323;
-  border-width: 8px;
-  color: #BF40BF;
+  border-width: 5px;
+  color: #663399;
   padding: 10px;
   margin: 10px;
   font-size: 30px;
@@ -243,7 +254,7 @@ body {
 }
 
 .job-role {
-  color: #BF40BF;
+  color: #663399;
   font-size: 25px;
 }
 
@@ -265,8 +276,52 @@ body {
 }
 
 .portfolio-img {
-  width: 50px;   /* or auto if you want to use the image’s natural size */
+  width: 50px;
   height: 35px;
   object-fit: contain;
   margin-top: 5px;
+}
+
+.proj-pic {
+  height: 300px;
+  width: 300px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 9999;
+}
+
+.overlay-content {
+  width: 90%;
+  height: 90vh;
+  border: solid;
+  border-color: #663399;
+  border-width: 7px;
+
+  background-color: #232323;
+  color: #ffffff;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 24px;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Keyframes for the slide-up animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

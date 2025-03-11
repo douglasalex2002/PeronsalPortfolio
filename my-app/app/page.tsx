@@ -1,8 +1,24 @@
-import React from 'react'
+"use client"
 
-const page = () => {
+import React, { useState } from 'react'
+
+const Page: React.FC = () => {
+  const [showOverlay, setShowOverlay] = useState<boolean>(false);
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    setShowOverlay(true);
+  };
+
   return (
     <>
+     {showOverlay && (
+        <div className="overlay" onClick={() => setShowOverlay(false)}>
+          <div className="overlay-content">
+            Hello world
+          </div>
+        </div>
+      )}
       <div className='colored-rectangle'></div>
       <div id='space'></div>
       <div id='top-row'>
@@ -15,7 +31,7 @@ const page = () => {
           <a href="#Projects" className="left-buttons" id='hover-underline'>Projects</a>
         </div>
         <div>
-          <a href="#ContactMe" className='topButtons' id="contact-me">Contact Me</a>
+        <a href="#" onClick={handleContactClick} className='topButtons' id="contact-me">Contact Me</a>
         </div>
       </div>
       <div id='AboutMe'>
@@ -25,19 +41,19 @@ const page = () => {
       <div id="featuredWork">
         <h1 className="section-title" id="featured-work-title">Featured Work</h1>
         <div id="featured-work-projects">
-          <div className='single-featured-work'>
+          <div className='single-featured-work' id="left-single">
             <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
             <h1 className='featured-title'>Title One</h1>
             <p className="featured-text">Languages:</p>
             <p className="featured-text">Other Tools:</p>
           </div>
-          <div className='single-featured-work'>
+          <div className='single-featured-work' id="middle-single">
             <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
             <h1 className='featured-title'>Title Two</h1>
             <p className="featured-text">Languages:</p>
             <p className="featured-text">Other Tools:</p>
           </div>
-          <div className='single-featured-work'>
+          <div className='single-featured-work' id="right-single">
             <img src='/pictures/placeholder.png' alt="Place Holder" className='featured-images'></img>
             <h1 className='featured-title'>Title Three</h1>
             <p className="featured-text">Languages:</p>
@@ -85,39 +101,39 @@ const page = () => {
         </h1>
         <div className='projects-grid-container'>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project One</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Two</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Three</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Four</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Five</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Six</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Seven</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Eight</p>
           </div>
           <div>
-            <img src='/pictures/2.png' alt="Place Holder" width="300px" height="300px"></img>
+            <img src='/pictures/placeholder.png' alt="Place Holder" className="proj-pic"></img>
             <p>Project Nine</p>
           </div>
         </div>
@@ -126,4 +142,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
