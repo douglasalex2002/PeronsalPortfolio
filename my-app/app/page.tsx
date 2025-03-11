@@ -93,7 +93,6 @@ const Page: React.FC = () => {
       <div className="colored-rectangle"></div>
       <div id="space"></div>
 
-      {/* Top row navigation */}
       <div id="top-row">
         <div className="top-row-left">
           <a href="#" className="left-buttons" id="AD-button">

@@ -301,6 +301,7 @@ body {
 }
 
 .overlay-content {
+  max-width: 500px;
   width: 90%;
   height: 90vh;
   border: solid;
