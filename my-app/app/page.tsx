@@ -98,13 +98,13 @@ const Page: React.FC = () => {
           <a href="#" className="left-buttons" id="AD-button">
             <span>AD</span>
           </a>
-          <a href="#AboutMe" className="left-buttons" id="hover-underline">
+          <a href="#AboutMe" className="left-buttons hover-expand">
             About Me
           </a>
-          <a href="#Experience" className="left-buttons" id="hover-underline">
+          <a href="#Experience" className="left-buttons hover-expand">
             Experience
           </a>
-          <a href="#Projects" className="left-buttons" id="hover-underline">
+          <a href="#Projects" className="left-buttons hover-expand">
             Projects
           </a>
         </div>

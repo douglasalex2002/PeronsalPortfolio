@@ -45,11 +45,6 @@ body {
   font-size: 30px;
 }
 
-#top-row a:hover {
-  background-color: #ffffff;
-  color: black;
-}
-
 .top-row-left {
   display: flex;
   gap: 20px;
@@ -360,3 +355,60 @@ body {
 .send-button:hover {
   background-color: #5a2e85;
 }
+
+.hover-expand {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 6px 10px;
+}
+
+.hover-expand::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 100%;
+  height: 25%;
+  background-color: #663399;
+  z-index: -1;
+  transition: height 0.3s ease;
+}
+
+.hover-expand:hover::before {
+  height: 75%;
+}
+
+.hover-expand-nav {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 6px 10px;
+}
+
+.hover-expand-nav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 100%;
+  height: 25%;
+  background-color: #232323;
+  z-index: -1;
+  transition: height 0.3s ease;
+}
+
+.hover-expand-nav:hover::before {
+  height: 70%;
+}
+
+
+

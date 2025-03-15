@@ -26,13 +26,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Open overlay on "Contact Me" click
   const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     setShowOverlay(true);
   };
 
-  // EmailJS form submission handler
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
@@ -65,13 +63,13 @@ export default function Navbar() {
             <a href="#" className="left-buttons" id="AD-button">
               AD
             </a>
-            <a href="#AboutMe" className="left-buttons" id="hover-underline">
+            <a href="#AboutMe" className="left-buttons hover-expand-nav">
               About Me
             </a>
-            <a href="#Experience" className="left-buttons" id="hover-underline">
+            <a href="#Experience" className="left-buttons hover-expand-nav">
               Experience
             </a>
-            <a href="#Projects" className="left-buttons" id="hover-underline">
+            <a href="#Projects" className="left-buttons hover-expand-nav">
               Projects
             </a>
           </div>
