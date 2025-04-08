@@ -96,7 +96,7 @@ body {
 }
 
 #AboutMe {
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 30px;
   width: 100%;
   text-align: center;
@@ -146,7 +146,7 @@ body {
 .about-me-box h2 {
   font-size: 32px;
   font-weight: 600;
-  color: #663399;
+  color: #8A5CF7;
   margin-bottom: 5px;
 }
 
@@ -160,7 +160,7 @@ body {
 .about-me-divider {
   width: 60px;
   height: 3px;
-  background-color: #663399;
+  background-color: #8A5CF7;
   margin-bottom: 20px;
 }
 
@@ -204,7 +204,7 @@ body {
 }
 
 .social-link:hover {
-  color: #663399;
+  color: #8A5CF7;
   transform: translateY(-2px);
 }
 
@@ -222,7 +222,7 @@ body {
 .resume-link {
   display: flex;
   align-items: center;
-  background-color: #663399;
+  background-color: #8A5CF7;
   padding: 6px 12px;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -231,7 +231,7 @@ body {
 }
 
 .resume-link:hover {
-  background-color: #7a41b9;
+  background-color: #9c78fa;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   color: white;
@@ -266,12 +266,75 @@ body {
 }
 
 .about-me-items {
-  padding: 20px;
+  padding: 0;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 100%;
   height: auto;
+  border-radius: 50%;
+}
+
+.headshot-wrapper {
+  perspective: 1000px;
+  width: 450px;
+  height: 450px;
+  padding: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+  position: relative;
+}
+
+.headshot-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flipped .headshot-inner {
+  transform: rotateY(180deg);
+}
+
+.headshot-front, .headshot-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+.headshot-back {
+  transform: rotateY(180deg);
+}
+
+.headshot-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 5px solid #c0c0c0;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.headshot-wrapper:hover::after {
+  border-color: #8A5CF7;
+  box-shadow: 0 0 15px rgba(138, 92, 247, 0.3);
+}
+
+img.about-me-items {
+  border-radius: 50%;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.headshot-border::after {
+  border-color: #8A5CF7;
+  box-shadow: 0 0 15px rgba(138, 92, 247, 0.3);
 }
 
 #featured-work-projects {
@@ -333,7 +396,7 @@ body {
 #space {
   width: 100%;
   background-color: #ffffff;
-  height: 45px;
+  height: 25px;
 }
 
 .projects-grid-container {
@@ -502,10 +565,13 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .send-button:hover {
-  background-color: #5a2e85;
+  background-color: #9c78fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(138, 92, 247, 0.4);
 }
 
 .hover-expand {

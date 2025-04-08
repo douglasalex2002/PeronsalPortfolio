@@ -292,15 +292,17 @@ export default function Navbar() {
           width: 100%;
           padding: 10px;
           font-size: 18px;
-          background-color: #663399;
+          background-color: #8A5CF7;
           color: #ffffff;
           border: none;
           border-radius: 4px;
           cursor: pointer;
-          transition: background-color 0.3s, color 0.3s;
+          transition: all 0.3s ease;
         }
         .send-button:hover {
-          background-color: #5a2e85;
+          background-color: #9c78fa;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(138, 92, 247, 0.4);
         }
       `}</style>
     </>
