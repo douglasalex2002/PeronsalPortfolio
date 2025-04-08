@@ -33,11 +33,12 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: space-around;
+  background-color: #ffffff;
 }
 
 #top-row a {
   float: left;
-  color: #ffffff;
+  color: #232323;
   text-align: center;
   padding-left: 6px;
   padding-right: 6px;
@@ -50,10 +51,23 @@ body {
   gap: 20px;
 }
 
-#AD-button {
+#AD-button,
+#contact-me {
   border-style: solid;
   border-width: 5px;
   border-radius: 5px;
+  border-color: #232323;
+  background-color: transparent;
+  color: #232323;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect */
+#AD-button:hover,
+#contact-me:hover {
+  background-color: #232323;
+  color: #ffffff;
+  border-color: #232323;
 }
 
 .left-buttons {
@@ -68,7 +82,7 @@ body {
 }
 
 .colored-rectangle {
-  background-color: #663399;
+  background-color: #8A5CF7;
   height: 35px;
   width: 100%
 }
@@ -86,6 +100,8 @@ body {
   padding-bottom: 30px;
   width: 100%;
   text-align: center;
+  background-color: #ffffff;
+  color: #232323;
 }
 
 .about-me-container {
@@ -112,22 +128,118 @@ body {
 }
 
 .about-me-box {
-  background-color: #3E2A5A;
-  color: white;
+  background-color: #F5F5F5;
+  color: #232323;
   border-radius: 15px;
-  padding: 30px;
+  padding: 35px;
   width: 100%;
   height: 100%;
   min-height: 300px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .about-me-box h2 {
-  font-size: 36px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #663399;
+  margin-bottom: 5px;
+}
+
+.about-me-box h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.about-me-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #663399;
+  margin-bottom: 20px;
+}
+
+.about-me-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.about-info {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.social-link:hover {
+  color: #663399;
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+}
+
+.social-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.resume-link {
+  display: flex;
+  align-items: center;
+  background-color: #663399;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume-link:hover {
+  background-color: #7a41b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.resume-text {
+  margin-left: 6px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -142,7 +254,7 @@ body {
 }
 
 #my-name {
-  color: #663399;
+  color: #8A5CF7;
 }
 
 #about-me-text {
@@ -150,6 +262,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 2%;
+  color: #232323;
 }
 
 .about-me-items {
@@ -219,7 +332,7 @@ body {
 
 #space {
   width: 100%;
-  background-color: #232323;
+  background-color: #ffffff;
   height: 45px;
 }
 
@@ -238,7 +351,7 @@ body {
   border-radius: 17px;
   border-color: #232323;
   border-width: 5px;
-  color: #663399;
+  color: #8A5CF7;
   padding: 10px;
   margin: 10px;
   font-size: 30px;
@@ -294,7 +407,7 @@ body {
 }
 
 .job-role {
-  color: #663399;
+  color: #8A5CF7;
   font-size: 25px;
 }
 
@@ -340,7 +453,7 @@ body {
   width: 90%;
   height: 90vh;
   border: solid;
-  border-color: #663399;
+  border-color: #8A5CF7;
   border-width: 7px;
   background-color: #232323;
   color: #ffffff;
@@ -384,7 +497,7 @@ body {
   width: 100%;
   padding: 10px;
   font-size: 18px;
-  background-color: #663399;
+  background-color: #8A5CF7;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -400,7 +513,7 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 0;
-  color: #ffffff;
+  color: #232323;
   text-decoration: none;
   font-size: 30px;
   padding: 6px 10px;
@@ -413,7 +526,7 @@ body {
   bottom: 8px;
   width: 100%;
   height: 25%;
-  background-color: #663399;
+  background-color: #8A5CF7 ;
   z-index: -1;
   transition: height 0.3s ease;
 }
@@ -422,12 +535,16 @@ body {
   height: 75%;
 }
 
+.hover-expand:hover {
+  color: #ffffff;
+}
+
 .hover-expand-nav {
   display: inline-block;
   position: relative;
   overflow: hidden;
   z-index: 0;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-size: 30px;
   padding: 6px 10px;
@@ -449,25 +566,6 @@ body {
   height: 70%;
 }
 
-#AD-button,
-#contact-me {
-  border-style: solid;
-  border-width: 5px;
-  border-radius: 5px;
-  border-color: #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Hover effect */
-#AD-button:hover,
-#contact-me:hover {
-  background-color: #ffffff;
-  color: #232323;
-  border-color: #ffffff;
-}
-
 /* Container: inline-block with a set width so it 
    reserves space and doesn't push the rest of the text */
 .typewriter-container {
@@ -479,7 +577,7 @@ body {
 
 /* The typewrite element itself */
 .typewrite {
-  color: #663399;
+  color: #8A5CF7;
   display: inline-block;
   position: relative;
 }
@@ -496,7 +594,7 @@ body {
 /* Cursor blink animation */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #663399 }
+  50% { border-color: #8A5CF7 }
 }
 
 /* Responsive Design */
@@ -633,7 +731,7 @@ body {
 
 .contact-email {
   font-size: 20px;
-  color: #663399;
+  color: #8A5CF7;
   margin-bottom: 20px;
   font-weight: 600;
   display: flex;
@@ -687,7 +785,7 @@ body {
   display: inline-block;
   width: 2px;
   height: 1em;
-  background-color: #663399;
+  background-color: #8A5CF7;
   margin-left: 2px;
   vertical-align: text-bottom;
   animation: blink 0.7s infinite;
@@ -696,6 +794,122 @@ body {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+.gray-section {
+  background-color: #232323;
+  color: #ffffff;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.gray-button {
+  display: inline-block;
+  background-color: #232323;
+  color: #ffffff;
+  padding: 12px 25px;
+  margin: 15px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.gray-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-content {
+  padding: 6px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  background-color: #8A5CF7;
+  color: white;
+  width: 100%;
+  align-items: center;
+}
+
+.navbar-content a {
+  color: white !important;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+/* Override hover-expand-nav style to ensure white text */
+.hover-expand-nav {
+  color: white;
+}
+
+.navbar-content #contact-me, 
+.navbar-content #AD-button {
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 5px;
+  border-color: #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-content #contact-me:hover,
+.navbar-content #AD-button:hover {
+  background-color: #ffffff;
+  color: #464646;
+  border-color: #ffffff;
+}
+
+.tech-stack {
+  margin-top: 15px;
+}
+
+.tech-stack h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-item {
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tech-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
 }
 
 

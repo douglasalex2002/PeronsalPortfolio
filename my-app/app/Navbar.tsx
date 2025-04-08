@@ -20,7 +20,7 @@ export default function Navbar() {
     const handleScroll = () => {
       // Only control navbar for non-mobile
       if (!isMobile) {
-        setShowNavbar(window.scrollY > 100);
+        setShowNavbar(window.scrollY > 30);
       } else {
         // Hide navbar on mobile
         setShowNavbar(false);
@@ -36,7 +36,7 @@ export default function Navbar() {
         setShowNavbar(false);
       } else {
         // Use scroll position to determine visibility on desktop
-        setShowNavbar(window.scrollY > 100);
+        setShowNavbar(window.scrollY > 30);
       }
     };
 
@@ -100,7 +100,7 @@ export default function Navbar() {
     <>
       {/* Regular navbar for desktop */}
       <nav className={`${styles.navbar} ${showNavbar ? styles.slideDown : ""}`}>
-        <div id="top-row">
+        <div className="navbar-content">
           <div className="top-row-left">
             <a href="#" className="left-buttons" id="AD-button">
               AD
