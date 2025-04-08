@@ -15,7 +15,7 @@ const Page: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
   const formRef = useRef<HTMLFormElement>(null);
-  const typewriterTexts = ["Software Engineer", "Scuba Diver", "Traveling Enthusiast"];
+  const typewriterTexts = ["Software Engineer.", "Scuba Diver.", "Traveling Enthusiast."];
 
   useEffect(() => {
     const typewriterTimeout = setTimeout(() => {
@@ -263,13 +263,9 @@ const Page: React.FC = () => {
                 </div>
               </div>
               <div className="about-me-divider"></div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus velit vitae tortor tincidunt, non feugiat arcu auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec dignissim magna a metus dignissim, at sollicitudin odio placerat. 
-              </p>
-              <p>
-                In hac habitasse platea dictumst. Maecenas vitae enim ut urna tristique tempor. Nulla facilisi. Nulla facilisi. Cras condimentum magna non lectus sollicitudin, eu dictum neque ultricies.
-              </p>
-              
+                <p>
+                I'm currently studying Computer Science at James Madison University and will be graduating in May 2026. I started out focusing on full-stack web development, and lately, I've been shifting my focus toward backend development. When I'm not coding, you'll usually find me exploring new places—I've been fortunate enough to travel to fascinating spots like Egypt, Peru, and Turkey—or staying active by lifting weights, playing volleyball, and reading a good book. My goal in the coming years is to work for a company where I get to do what I truly enjoy: software engineering.
+                </p>      
               <div className="tech-stack">
                 <h4>Tech Stack</h4>
                 <div className="tech-items">
@@ -319,7 +315,11 @@ const Page: React.FC = () => {
             <img src="/pictures/portfolio.png" alt="Portfolio Picture" className="portfolio-img" />
             <div className="job-text">
               <p className="job-role">Software Engineer Intern</p>
-              <p className="company-name">RevSpring</p>
+              <p className="company-name">
+                <a href="https://revspringinc.com/" target="_blank" rel="noopener noreferrer">
+                  RevSpring
+                </a>
+              </p>
               <p className="job-dates">Jun 2025 - Aug 2025</p>
               <div className="job-bullets">
                 <p>- Lorem ipsum odor amet, consectetuer adipiscing elit...</p>
@@ -332,7 +332,11 @@ const Page: React.FC = () => {
             <img src="/pictures/portfolio.png" alt="Portfolio Picture" className="portfolio-img" />
             <div className="job-text">
               <p className="job-role">Job Site Manager</p>
-              <p className="company-name">WaterFront Restoration</p>
+              <p className="company-name">
+                <a href="https://www.waterfrontrestoration.com/" target="_blank" rel="noopener noreferrer">
+                  WaterFront Restoration
+                </a>
+              </p>
               <p className="job-dates">Jun 2022 - Aug 2024 (Seasonal)</p>
               <div className="job-bullets">
                 <p>- Led and collaborated with a team of 5 to successfully complete projects...</p>
@@ -349,20 +353,17 @@ const Page: React.FC = () => {
           <div className="single-featured-work" id="left-single">
             <img src="/pictures/placeholder.png" alt="Place Holder" className="featured-images" />
             <h1 className="featured-title">Title One</h1>
-            <p className="featured-text">Languages:</p>
-            <p className="featured-text">Other Tools:</p>
+            <p className="featured-text">Tech:</p>
           </div>
           <div className="single-featured-work" id="middle-single">
             <img src="/pictures/placeholder.png" alt="Place Holder" className="featured-images" />
             <h1 className="featured-title">Title Two</h1>
-            <p className="featured-text">Languages:</p>
-            <p className="featured-text">Other Tools:</p>
+            <p className="featured-text">Tech:</p>
           </div>
           <div className="single-featured-work" id="right-single">
             <img src="/pictures/placeholder.png" alt="Place Holder" className="featured-images" />
             <h1 className="featured-title">Title Three</h1>
-            <p className="featured-text">Languages:</p>
-            <p className="featured-text">Other Tools:</p>
+            <p className="featured-text">Tech:</p>
           </div>
         </div>
       </div>
@@ -403,6 +404,12 @@ const Page: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <footer className="footer">
+        <p>
+          Developed with <span className="heart">❤️</span> by <a href="#AboutMe" className="footer-link">Alex Douglas</a>
+        </p>
+      </footer>
     </>
   );
 };

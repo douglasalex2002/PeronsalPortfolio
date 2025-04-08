@@ -14,8 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Douglas",
-  description: "Alex Douglas's Portfolio, showcasing my skills and knowledge",
+  title: "Alex Douglas | Portfolio",
+  description: "Personal portfolio of Alex Douglas, Software Engineer",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+  }
 };
 
 export default function RootLayout({
@@ -27,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -349,33 +349,48 @@ img.about-me-items {
 .single-featured-work {
   border-style: solid;
   border-width: 17px;
-  border-radius: 50px;
+  border-radius: 25px;
   margin: 20px;
-  transition: 0.5s;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 #left-single {
-  background-color: #CCDCFD;
-  border-color: #CCDCFD;
+  background-color: #9c78fa;
+  border-color: #9c78fa;
+  color: white;
 }
 
 #middle-single {
-  background-color: #E8BFFB;
-  border-color: #E8BFFB;
+  background-color: #8A5CF7;
+  border-color: #8A5CF7;
+  color: white;
 }
 
 #right-single {
-  background-color: #BBBEFE;
-  border-color: #BBBEFE;
+  background-color: #7040e0;
+  border-color: #7040e0;
+  color: white;
 }
 
 .single-featured-work:hover {
   transform: translateY(-10px);
-  z-index: 5;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px rgba(138, 92, 247, 0.4);
 }
 
-.featured-images, .proj-pic {
+.featured-images {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.single-featured-work:hover .featured-images {
+  transform: scale(1.03);
+}
+
+.proj-pic {
   max-width: 100%;
   height: auto;
 }
@@ -383,14 +398,17 @@ img.about-me-items {
 .featured-title {
   text-align: center;
   font-size: 30px;
-  color: #232323;
+  color: white;
+  margin-top: 15px;
+  font-weight: 600;
 }
 
 .featured-text {
   text-align: left;
   padding-left: 45px;
   font-size: 17px;
-  color: #232323;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
 }
 
 #space {
@@ -476,6 +494,17 @@ img.about-me-items {
 
 .company-name {
   font-size: 22px;
+}
+
+.company-name a {
+  color: #232323;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.company-name a:hover {
+  color: #8A5CF7;
+  text-decoration: underline;
 }
 
 .job-dates {
@@ -907,7 +936,7 @@ img.about-me-items {
 }
 
 .navbar-content a {
-  color: white !important;
+  color: white;
   text-decoration: none;
   font-size: 30px;
 }
@@ -976,6 +1005,40 @@ img.about-me-items {
   width: 18px;
   height: 18px;
   margin-right: 6px;
+}
+
+.footer {
+  background-color: #232323;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.footer p {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.heart {
+  color: #ff0000;
+  font-size: 22px;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.footer-link {
+  color: #8A5CF7;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #9c78fa;
+  text-decoration: underline;
 }
 
 
