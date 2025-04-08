@@ -12,6 +12,7 @@ export default function Navbar() {
   const [message, setMessage] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -77,6 +78,17 @@ export default function Navbar() {
       .catch((error) => {
         console.error("EmailJS Error:", error);
         alert("There was an error sending your message. Please try again.");
+      });
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('alexdouglas.dev@gmail.com')
+      .then(() => {
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(false), 2000);
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
       });
   };
 
@@ -194,6 +206,33 @@ export default function Navbar() {
               maxWidth: "500px",
             }}
           >
+            <div className="contact-header">
+              <h3>Want to reach out?</h3>
+              <p className="contact-email">
+                alexdouglas.dev@gmail.com
+                <button 
+                  className="copy-button" 
+                  onClick={copyToClipboard} 
+                  title="Copy to clipboard"
+                >
+                  {copySuccess ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                  )}
+                </button>
+              </p>
+              <div className="contact-divider">
+                <span className="divider-line"></span>
+                <span className="divider-text">OR</span>
+                <span className="divider-line"></span>
+              </div>
+            </div>
+            
             <form ref={formRef} onSubmit={handleSubmit}>
               <div className="form-group" style={{ marginBottom: "15px" }}>
                 <label htmlFor="name" style={{ display: "block", marginBottom: "5px" }}>

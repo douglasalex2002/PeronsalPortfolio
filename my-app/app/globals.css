@@ -342,7 +342,6 @@ body {
   border: solid;
   border-color: #663399;
   border-width: 7px;
-
   background-color: #232323;
   color: #ffffff;
   padding: 20px;
@@ -471,22 +470,34 @@ body {
 
 /* Container: inline-block with a set width so it 
    reserves space and doesn't push the rest of the text */
-   .typewriter-container {
-    display: inline-block;
-    position: relative;
-    width: 16ch;      /* Enough space for your longest phrase, e.g. "A Web Developer" */
-    vertical-align: bottom; /* So it aligns nicely with adjacent text */
-    overflow: hidden; /* If you want to hide any overshoot */
-  }
-  
-  /* The .wrap is what the script inserts. 
-     Absolutely position it so its expansion doesn't affect layout. */
-  .typewriter-container .wrap {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap; /* Keep the typed text on one line */
-  }
+.typewriter-container {
+  display: inline-block;
+  position: relative;
+  min-width: 16ch;
+  vertical-align: bottom;
+}
+
+/* The typewrite element itself */
+.typewrite {
+  color: #663399;
+  display: inline-block;
+  position: relative;
+}
+
+/* The .wrap is what the script inserts. 
+   Absolutely position it so its expansion doesn't affect layout. */
+.typewrite .wrap {
+  display: inline-block;
+  white-space: nowrap; /* Keep the typed text on one line */
+  border-right: 0.08em solid transparent; /* Cursor is added by JS */
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Cursor blink animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #663399 }
+}
 
 /* Responsive Design */
 @media (max-width: 920px) {
@@ -607,6 +618,84 @@ body {
     height: 200px;
     width: 200px;
   }
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contact-header h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.contact-email {
+  font-size: 20px;
+  color: #663399;
+  margin-bottom: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.copy-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.copy-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.divider-text {
+  padding: 0 15px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #663399;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 

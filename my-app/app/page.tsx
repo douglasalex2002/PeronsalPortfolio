@@ -8,67 +8,41 @@ const Page: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [copySuccess, setCopySuccess] = useState<boolean>(false);
+  const [typewriterText, setTypewriterText] = useState<string>("");
+  const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   const formRef = useRef<HTMLFormElement>(null);
+  const typewriterTexts = ["Software Engineer", "Scuba Diver", "Traveling Enthusiast"];
 
   useEffect(() => {
-    function TxtType(this: any, el: HTMLElement, toRotate: string[], period: number) {
-      this.toRotate = toRotate;
-      this.el = el;
-      this.loopNum = 0;
-      this.period = period || 2000;
-      this.txt = "";
-      this.tick();
-      this.isDeleting = false;
-    }
-
-    TxtType.prototype.tick = function () {
-      const i = this.loopNum % this.toRotate.length;
-      const fullTxt = this.toRotate[i];
-
-      if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
+    const typewriterTimeout = setTimeout(() => {
+      const currentText = typewriterTexts[currentTextIndex];
+      
+      // Handle typing and deleting
+      if (!isDeleting) {
+        setTypewriterText(currentText.substring(0, typewriterText.length + 1));
+        
+        // If we've fully typed the text, start deleting after a delay
+        if (typewriterText === currentText) {
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, 2000);
+        }
       } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        setTypewriterText(currentText.substring(0, typewriterText.length - 1));
+        
+        // If we've fully deleted the text, move to the next phrase
+        if (typewriterText === '') {
+          setIsDeleting(false);
+          setCurrentTextIndex((currentTextIndex + 1) % typewriterTexts.length);
+        }
       }
-
-      this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
-
-      let delta = 200 - Math.random() * 100;
-      if (this.isDeleting) {
-        delta /= 2;
-      }
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === "") {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-      }
-      setTimeout(() => {
-        this.tick();
-      }, delta);
-    };
-
-    const elements = document.getElementsByClassName("typewrite");
-    for (let i = 0; i < elements.length; i++) {
-      const toRotate = elements[i].getAttribute("data-type");
-      const periodAttr = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new (TxtType as any)(
-          elements[i] as HTMLElement,
-          JSON.parse(toRotate),
-          periodAttr ? parseInt(periodAttr, 10) : 2000
-        );
-      }
-    }
-
-    const css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = `.typewrite > .wrap { border-right: 0.08em solid #fff }`;
-    document.body.appendChild(css);
-  }, []);
+    }, isDeleting ? 50 : 150);
+    
+    return () => clearTimeout(typewriterTimeout);
+  }, [typewriterText, currentTextIndex, isDeleting, typewriterTexts]);
 
   const handleContactClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -102,11 +76,49 @@ const Page: React.FC = () => {
       });
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('alexdouglas.dev@gmail.com')
+      .then(() => {
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(false), 2000);
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+  };
+
   return (
     <>
       {showOverlay && (
         <div className="overlay" onClick={() => setShowOverlay(false)}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+            <div className="contact-header">
+              <h3>Want to reach out?</h3>
+              <p className="contact-email">
+                alexdouglas.dev@gmail.com
+                <button 
+                  className="copy-button" 
+                  onClick={copyToClipboard} 
+                  title="Copy to clipboard"
+                >
+                  {copySuccess ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                  )}
+                </button>
+              </p>
+              <div className="contact-divider">
+                <span className="divider-line"></span>
+                <span className="divider-text">OR</span>
+                <span className="divider-line"></span>
+              </div>
+            </div>
+            
             <form ref={formRef} onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name:</label>
@@ -192,20 +204,14 @@ const Page: React.FC = () => {
               className="about-me-items"
             />
             <p className="about-me-items" id="about-me-text">
-              <span>Hello, I am </span>
-
-              {/* Fixed-width container so the typed text doesn't push other text */}
+              <span>Hello, I am a </span>
+              
               <span className="typewriter-container">
-                <span
-                  id="my-name"
-                  className="typewrite"
-                  data-period="2000"
-                  data-type='["Alex Douglas", "A Software Engineer", "A Web Developer"]'
-                ></span>
+                <span className="typewrite">
+                  {typewriterText}
+                  <span className="typing-cursor"></span>
+                </span>
               </span>
-
-              . <br />
-              Lorem ipsum odor amet, consectetuer adipiscing elit...
             </p>
           </div>
           <div className="about-me-right">
