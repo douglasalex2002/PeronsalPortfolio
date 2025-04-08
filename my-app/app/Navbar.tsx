@@ -10,21 +10,46 @@ export default function Navbar() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setShowNavbar(true);
+      // Only control navbar for non-mobile
+      if (!isMobile) {
+        setShowNavbar(window.scrollY > 100);
       } else {
+        // Hide navbar on mobile
         setShowNavbar(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleResize = () => {
+      const mobile = window.innerWidth < 920;
+      setIsMobile(mobile);
+      
+      // Hide navbar on mobile
+      if (mobile) {
+        setShowNavbar(false);
+      } else {
+        // Use scroll position to determine visibility on desktop
+        setShowNavbar(window.scrollY > 100);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
 
   const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
@@ -55,8 +80,13 @@ export default function Navbar() {
       });
   };
 
+  const handleHamburgerClick = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <>
+      {/* Regular navbar for desktop */}
       <nav className={`${styles.navbar} ${showNavbar ? styles.slideDown : ""}`}>
         <div id="top-row">
           <div className="top-row-left">
@@ -85,6 +115,55 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* Hamburger menu for mobile, directly on gray background */}
+      {isMobile && (
+        <div className={`${styles.mobileHamburger} ${showSidebar ? styles.hamburgerOpen : ''}`} onClick={handleHamburgerClick}>
+          <div className={styles.hamburger}>
+            <span className={showSidebar ? styles.hamburgerSpan1 : ''}></span>
+            <span className={showSidebar ? styles.hamburgerSpan2 : ''}></span>
+            <span className={showSidebar ? styles.hamburgerSpan3 : ''}></span>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile sidebar */}
+      {isMobile && (
+        <div className={`${styles.sidebar} ${showSidebar ? styles.sidebarOpen : ''}`}>
+          <div className={styles.sidebarContent}>
+            <h2 className={styles.sidebarTitle}>Menu</h2>
+            <div className={styles.sidebarLinks}>
+              <a href="#" className={styles.sidebarLink} onClick={() => setShowSidebar(false)}>
+                Home
+              </a>
+              <a href="#AboutMe" className={styles.sidebarLink} onClick={() => setShowSidebar(false)}>
+                About Me
+              </a>
+              <a href="#Experience" className={styles.sidebarLink} onClick={() => setShowSidebar(false)}>
+                Experience
+              </a>
+              <a href="#Projects" className={styles.sidebarLink} onClick={() => setShowSidebar(false)}>
+                Projects
+              </a>
+              <a href="#ContactMe" onClick={(e) => {
+                e.preventDefault(); 
+                setShowOverlay(true); 
+                setShowSidebar(false);
+              }} className={styles.sidebarLink}>
+                Contact Me
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Overlay for closing sidebar when clicking outside */}
+      {showSidebar && (
+        <div 
+          className={styles.sidebarOverlay} 
+          onClick={() => setShowSidebar(false)}
+        ></div>
+      )}
 
       {showOverlay && (
         <div

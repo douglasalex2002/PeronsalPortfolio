@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "emailjs-com";
 
 const Page: React.FC = () => {
@@ -11,7 +11,68 @@ const Page: React.FC = () => {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  useEffect(() => {
+    function TxtType(this: any, el: HTMLElement, toRotate: string[], period: number) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = period || 2000;
+      this.txt = "";
+      this.tick();
+      this.isDeleting = false;
+    }
+
+    TxtType.prototype.tick = function () {
+      const i = this.loopNum % this.toRotate.length;
+      const fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
+
+      let delta = 200 - Math.random() * 100;
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === "") {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+      setTimeout(() => {
+        this.tick();
+      }, delta);
+    };
+
+    const elements = document.getElementsByClassName("typewrite");
+    for (let i = 0; i < elements.length; i++) {
+      const toRotate = elements[i].getAttribute("data-type");
+      const periodAttr = elements[i].getAttribute("data-period");
+      if (toRotate) {
+        new (TxtType as any)(
+          elements[i] as HTMLElement,
+          JSON.parse(toRotate),
+          periodAttr ? parseInt(periodAttr, 10) : 2000
+        );
+      }
+    }
+
+    const css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = `.typewrite > .wrap { border-right: 0.08em solid #fff }`;
+    document.body.appendChild(css);
+  }, []);
+
+  const handleContactClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     e.preventDefault();
     setShowOverlay(true);
   };
@@ -109,25 +170,50 @@ const Page: React.FC = () => {
           </a>
         </div>
         <div>
-          <a href="#" onClick={handleContactClick} className="topButtons" id="contact-me">
+          <a
+            href="#"
+            onClick={handleContactClick}
+            className="topButtons"
+            id="contact-me"
+          >
             Contact Me
           </a>
         </div>
       </div>
 
       <div id="AboutMe">
-        <img
-          src="/pictures/headshot_circle.png"
-          alt="Professional Headshot"
-          width="450"
-          height="450"
-          className="about-me-items"
-        />
-        <p className="about-me-items" id="about-me-text">
-          Hello, I am <span id="my-name">Alex Douglas</span>. Lorem ipsum odor amet,
-          consectetuer adipiscing elit. Facilisis ante nibh sit urna porttitor ornare
-          tristique enim. Tempor dictum nibh volutpat enim eget aliquet maecenas.
-        </p>
+        <div className="about-me-container">
+          <div className="about-me-left">
+            <img
+              src="/pictures/headshot_circle.png"
+              alt="Professional Headshot"
+              width="450"
+              height="450"
+              className="about-me-items"
+            />
+            <p className="about-me-items" id="about-me-text">
+              <span>Hello, I am </span>
+
+              {/* Fixed-width container so the typed text doesn't push other text */}
+              <span className="typewriter-container">
+                <span
+                  id="my-name"
+                  className="typewrite"
+                  data-period="2000"
+                  data-type='["Alex Douglas", "A Software Engineer", "A Web Developer"]'
+                ></span>
+              </span>
+
+              . <br />
+              Lorem ipsum odor amet, consectetuer adipiscing elit...
+            </p>
+          </div>
+          <div className="about-me-right">
+            <div className="about-me-box">
+              <h2>Hello World</h2>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="featuredWork">
@@ -213,18 +299,6 @@ const Page: React.FC = () => {
           <div>
             <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
             <p>Project Six</p>
-          </div>
-          <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
-            <p>Project Seven</p>
-          </div>
-          <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
-            <p>Project Eight</p>
-          </div>
-          <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
-            <p>Project Nine</p>
           </div>
         </div>
       </div>

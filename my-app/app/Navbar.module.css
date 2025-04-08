@@ -14,3 +14,141 @@
 .slideDown {
     transform: translateY(0);
 }
+
+.hamburgerContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.mobileHamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
+    background-color: #663399;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+}
+
+.hamburgerOpen {
+    right: 20px;
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* X animation when sidebar is open */
+.hamburgerSpan1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburgerSpan2 {
+    opacity: 0;
+}
+
+.hamburgerSpan3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -80%; /* Start off-screen */
+    width: 80%;
+    height: 100%;
+    background-color: #663399;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+.sidebarOpen {
+    right: 0; /* Slide in from right */
+}
+
+.sidebarContent {
+    padding: 80px 30px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarTitle {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebarLinks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.sidebarLink {
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.sidebarLink:last-child {
+    border-bottom: none;
+}
+
+.sidebarLink:hover {
+    padding-left: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+@media (max-width: 920px) {
+    .navbar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        padding: 0.75rem 0.5rem;
+    }
+}
