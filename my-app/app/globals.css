@@ -354,6 +354,7 @@ img.about-me-items {
   transition: all 0.3s ease;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 #left-single {
@@ -377,6 +378,70 @@ img.about-me-items {
 .single-featured-work:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(138, 92, 247, 0.4);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: rgba(35, 35, 35, 0.92);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.4s ease;
+  backdrop-filter: blur(2px);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px 8px 0;
+}
+
+.card-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  max-width: 90%;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+.learn-more-btn {
+  background-color: #8A5CF7;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s, background-color 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.learn-more-btn:hover {
+  background-color: #9c78fa;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+}
+
+.single-featured-work:hover .card-overlay {
+  bottom: 0;
+}
+
+.single-featured-work:hover .card-description,
+.single-featured-work:hover .learn-more-btn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .featured-images {
@@ -409,6 +474,38 @@ img.about-me-items {
   font-size: 17px;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
+}
+
+.more-projects-link {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.more-projects-link a {
+  color: #8A5CF7;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.more-projects-link a:hover {
+  color: #9c78fa;
+  transform: translateY(-2px);
+}
+
+.arrow-icon {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.more-projects-link a:hover .arrow-icon {
+  transform: translateX(5px);
 }
 
 #space {
@@ -470,17 +567,84 @@ img.about-me-items {
   background-color: #ffffff;
   border-radius: 20px;
   width: 57%;
+  position: relative;
+  padding: 30px 20px;
+}
+
+.timeline {
+  position: absolute;
+  left: 40px;
+  top: 50px;
+  bottom: 50px;
+  width: 3px;
+  background-color: #8A5CF7;
+  border-radius: 4px;
+}
+
+/* Add decorative elements at the start and end of timeline */
+.timeline::before, .timeline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #8A5CF7;
+}
+
+.timeline::before {
+  top: -15px;
+  box-shadow: 0 -8px 0 -3px #8A5CF7, 0 -16px 0 -6px #8A5CF7;
+}
+
+.timeline::after {
+  bottom: -15px;
+}
+
+/* Timeline direction arrow indicators */
+.timeline::before {
+  box-shadow: 0 -10px 0 -4px #8A5CF7;
+}
+
+.job-entry {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 30px 0;
+  margin-left: 60px;
+  color: #232323;
+  position: relative;
+  padding: 10px 0;
+}
+
+.job-entry::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 15px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #8A5CF7;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px rgba(138, 92, 247, 0.3);
+  z-index: 1;
+}
+
+/* Add connecting lines to make it clearer */
+.job-entry::after {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 22px;
+  width: 30px;
+  height: 2px;
+  background-color: #8A5CF7;
+  z-index: 0;
 }
 
 #experience-title {
   font-size: 57px;
-}
-
-#right-experience > div {
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  color: #232323;
 }
 
 .job-text {
@@ -490,10 +654,15 @@ img.about-me-items {
 .job-role {
   color: #8A5CF7;
   font-size: 25px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .company-name {
   font-size: 22px;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .company-name a {
@@ -509,7 +678,7 @@ img.about-me-items {
 
 .job-dates {
   font-size: 18px;
-  margin-top: 10px;
+  margin: 0;
   margin-bottom: 10px;
   color: gray;  
   font-weight: 525;
@@ -518,13 +687,17 @@ img.about-me-items {
 .job-bullets {
   font-weight: 450;
   font-size: 18px;
+  margin: 0;
 }
 
 .portfolio-img {
-  width: 50px;
-  height: 35px;
+  width: 60px;
+  height: 45px;
   object-fit: contain;
   margin-top: 5px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .overlay {
@@ -1041,5 +1214,23 @@ img.about-me-items {
   text-decoration: underline;
 }
 
+.timeline-label {
+  position: absolute;
+  left: 10px;
+  color: #8A5CF7;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(138, 92, 247, 0.15);
+  z-index: 2;
+}
 
+.timeline-label.start {
+  top: 30px;
+}
 
+.timeline-label.end {
+  bottom: 30px;
+}
