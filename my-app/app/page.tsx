@@ -62,7 +62,7 @@ const Page: React.FC = () => {
         "alexdouglas.dev",
         "PersonalPortfolio",
         formRef.current,
-        "pcVO_PO8CueMBf2Nj"
+        process.env.EMAILJS_API_KEY
       )
       .then(() => {
         alert("Message sent successfully!");
