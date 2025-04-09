@@ -57,7 +57,6 @@
     transition: 0.4s;
 }
 
-/* X animation when sidebar is open */
 .hamburgerSpan1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -70,11 +69,10 @@
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Sidebar styles */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -80%; /* Start off-screen */
+    right: -80%;
     width: 80%;
     height: 100%;
     background-color: #8A5CF7;
@@ -85,7 +83,7 @@
 }
 
 .sidebarOpen {
-    right: 0; /* Slide in from right */
+    right: 0;
 }
 
 .sidebarContent {

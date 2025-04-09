@@ -18,11 +18,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only control navbar for non-mobile
       if (!isMobile) {
         setShowNavbar(window.scrollY > 30);
       } else {
-        // Hide navbar on mobile
         setShowNavbar(false);
       }
     };
@@ -31,16 +29,13 @@ export default function Navbar() {
       const mobile = window.innerWidth < 920;
       setIsMobile(mobile);
       
-      // Hide navbar on mobile
       if (mobile) {
         setShowNavbar(false);
       } else {
-        // Use scroll position to determine visibility on desktop
         setShowNavbar(window.scrollY > 30);
       }
     };
 
-    // Initial check
     handleResize();
 
     window.addEventListener('scroll', handleScroll);

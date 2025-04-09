@@ -584,7 +584,6 @@ img.about-me-items {
   border-radius: 4px;
 }
 
-/* Add decorative elements at the start and end of timeline */
 .timeline::before, .timeline::after {
   content: '';
   position: absolute;
@@ -605,7 +604,6 @@ img.about-me-items {
   bottom: -15px;
 }
 
-/* Timeline direction arrow indicators */
 .timeline::before {
   box-shadow: 0 -10px 0 -4px #8A5CF7;
 }
@@ -634,7 +632,6 @@ img.about-me-items {
   z-index: 1;
 }
 
-/* Add connecting lines to make it clearer */
 .job-entry::after {
   content: '';
   position: absolute;
@@ -837,8 +834,6 @@ img.about-me-items {
   height: 70%;
 }
 
-/* Container: inline-block with a set width so it 
-   reserves space and doesn't push the rest of the text */
 .typewriter-container {
   display: inline-block;
   position: relative;
@@ -846,29 +841,24 @@ img.about-me-items {
   vertical-align: bottom;
 }
 
-/* The typewrite element itself */
 .typewrite {
   color: #8A5CF7;
   display: inline-block;
   position: relative;
 }
 
-/* The .wrap is what the script inserts. 
-   Absolutely position it so its expansion doesn't affect layout. */
 .typewrite .wrap {
   display: inline-block;
-  white-space: nowrap; /* Keep the typed text on one line */
-  border-right: 0.08em solid transparent; /* Cursor is added by JS */
+  white-space: nowrap;
+  border-right: 0.08em solid transparent;
   animation: blink-caret 0.75s step-end infinite;
 }
 
-/* Cursor blink animation */
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #8A5CF7 }
 }
 
-/* Responsive Design */
 @media (max-width: 920px) {
   #top-row {
     display: none;
@@ -966,7 +956,6 @@ img.about-me-items {
     padding: 15px;
   }
   
-  /* Improved Experience section for mobile */
   #Experience {
     padding: 0 10px;
   }
@@ -1056,7 +1045,6 @@ img.about-me-items {
     padding: 10px;
   }
   
-  /* Additional mobile improvements */
   #experience-title {
     font-size: 42px;
     text-align: center;
@@ -1112,7 +1100,6 @@ img.about-me-items {
     font-size: 20px;
   }
   
-  /* Very small screen improvements */
   .timeline {
     left: 15px;
   }
@@ -1266,7 +1253,6 @@ img.about-me-items {
   font-size: 30px;
 }
 
-/* Override hover-expand-nav style to ensure white text */
 .hover-expand-nav {
   color: white;
 }
@@ -1350,7 +1336,7 @@ img.about-me-items {
 .heart {
   color: #ff0000;
   font-size: 22px;
-  display: inline-block;
+    display: inline-block;
   margin: 0 5px;
 }
 
@@ -1367,7 +1353,7 @@ img.about-me-items {
 }
 
 .timeline-label {
-  position: absolute;
+    position: absolute;
   left: 10px;
   color: #8A5CF7;
   font-weight: 600;
@@ -1387,7 +1373,6 @@ img.about-me-items {
   bottom: 30px;
 }
 
-/* Make sure the Tech Stack items are properly spaced and centered on mobile */
 @media (max-width: 600px) {
   .tech-items {
     justify-content: center;
