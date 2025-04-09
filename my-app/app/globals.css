@@ -281,6 +281,7 @@ body {
   margin: 0 auto;
   cursor: pointer;
   position: relative;
+  max-width: 100%;
 }
 
 .headshot-inner {
@@ -880,6 +881,11 @@ img.about-me-items {
     margin-top: 30px;
     min-height: 200px;
   }
+
+  .headshot-wrapper {
+    width: 380px;
+    height: 380px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -948,6 +954,12 @@ img.about-me-items {
     width: 300px;
     height: 300px;
   }
+
+  .headshot-wrapper {
+    width: 340px;
+    height: 340px;
+    padding: 15px;
+  }
 }
 
 @media (max-width: 550px) {
@@ -980,6 +992,29 @@ img.about-me-items {
   .proj-pic {
     height: 200px;
     width: 200px;
+  }
+
+  .headshot-wrapper {
+    width: 280px;
+    height: 280px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .headshot-wrapper {
+    width: 240px;
+    height: 240px;
+    padding: 8px;
+  }
+
+  .about-me-items img {
+    width: 220px;
+    height: 220px;
+  }
+
+  #about-me-text {
+    font-size: 20px;
   }
 }
 
