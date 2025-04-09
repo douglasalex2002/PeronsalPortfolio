@@ -254,7 +254,7 @@ const Page: React.FC = () => {
                     </svg>
                     <span className="social-text">GitHub</span>
                   </a>
-                  <a href="/resume.pdf" download className="social-link resume-link">
+                  <a href="/Resume_Alex_Douglas.pdf" download className="social-link resume-link">
                     <svg className="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
                     </svg>

@@ -411,26 +411,23 @@ img.about-me-items {
 }
 
 .learn-more-btn {
-  background-color: #8A5CF7;
+  background-color: transparent;
   color: white;
-  border: none;
+  border: 1px solid white;
   padding: 12px 26px;
   border-radius: 5px;
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s, background-color 0.3s ease;
   letter-spacing: 0.5px;
 }
 
 .learn-more-btn:hover {
-  background-color: #9c78fa;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
   letter-spacing: 1px;
 }
 
