@@ -318,9 +318,9 @@ const Page: React.FC = () => {
               </p>
               <p className="job-dates">Jun 2025 - Aug 2025</p>
               <div className="job-bullets">
-                <p>- N/A</p>
-                <p>- N/A</p>
-                <p>- N/A</p>
+                <p>- N/A (Coming Soon)</p>
+                <p>- N/A (Coming Soon)</p>
+                <p>- N/A (Coming Soon)</p>
               </div>
             </div>
           </div>
