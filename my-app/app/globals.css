@@ -960,6 +960,55 @@ img.about-me-items {
     height: 340px;
     padding: 15px;
   }
+  
+  /* Improved Experience section for mobile */
+  #Experience {
+    padding: 0 10px;
+  }
+  
+  #right-experience {
+    width: 100%;
+    padding: 40px 15px 30px;
+    margin: 20px 0;
+  }
+  
+  .timeline {
+    left: 20px;
+  }
+  
+  .timeline-label {
+    left: 5px;
+    font-size: 12px;
+  }
+  
+  .job-entry {
+    margin-left: 40px;
+    flex-direction: column;
+  }
+  
+  .job-entry::before {
+    left: -20px;
+  }
+  
+  .job-entry::after {
+    left: -20px;
+    width: 20px;
+  }
+  
+  .portfolio-img {
+    width: 50px;
+    height: 40px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .job-text {
+    margin-left: 0;
+  }
+  
+  .tech-items {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 550px) {
@@ -999,6 +1048,25 @@ img.about-me-items {
     height: 280px;
     padding: 10px;
   }
+  
+  /* Additional mobile improvements */
+  #experience-title {
+    font-size: 42px;
+    text-align: center;
+  }
+  
+  #left-experience {
+    margin: 15px 0;
+  }
+  
+  .job-bullets {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+  
+  .job-bullets p {
+    margin: 8px 0;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1015,6 +1083,31 @@ img.about-me-items {
 
   #about-me-text {
     font-size: 20px;
+  }
+  
+  /* Very small screen improvements */
+  .timeline {
+    left: 15px;
+  }
+  
+  .job-entry {
+    margin-left: 30px;
+  }
+  
+  .job-entry::before {
+    left: -15px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .job-entry::after {
+    left: -15px;
+    width: 15px;
+  }
+  
+  .timeline-label {
+    font-size: 11px;
+    padding: 2px 4px;
   }
 }
 
@@ -1265,4 +1358,23 @@ img.about-me-items {
 
 .timeline-label.end {
   bottom: 30px;
+}
+
+/* Make sure the Tech Stack items are properly spaced and centered on mobile */
+@media (max-width: 600px) {
+  .tech-items {
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .tech-item {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .tech-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
 }
