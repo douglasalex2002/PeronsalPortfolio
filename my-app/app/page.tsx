@@ -9,38 +9,9 @@ const Page: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
-  const [typewriterText, setTypewriterText] = useState<string>("");
-  const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
-  const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
   const formRef = useRef<HTMLFormElement>(null);
-  const typewriterTexts = ["Software Engineer.", "Scuba Diver.", "Traveling Enthusiast."];
-
-  useEffect(() => {
-    const typewriterTimeout = setTimeout(() => {
-      const currentText = typewriterTexts[currentTextIndex];
-
-      if (!isDeleting) {
-        setTypewriterText(currentText.substring(0, typewriterText.length + 1));
-
-        if (typewriterText === currentText) {
-          setTimeout(() => {
-            setIsDeleting(true);
-          }, 2000);
-        }
-      } else {
-        setTypewriterText(currentText.substring(0, typewriterText.length - 1));
-
-        if (typewriterText === '') {
-          setIsDeleting(false);
-          setCurrentTextIndex((currentTextIndex + 1) % typewriterTexts.length);
-        }
-      }
-    }, isDeleting ? 50 : 150);
-
-    return () => clearTimeout(typewriterTimeout);
-  }, [typewriterText, currentTextIndex, isDeleting, typewriterTexts]);
 
   const handleContactClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -220,16 +191,10 @@ const Page: React.FC = () => {
                 </div>
               </div>
             </div>
-            <p className="about-me-items" id="about-me-text">
-              <span>Hello, I am a </span>
-
-              <span className="typewriter-container">
-                <span className="typewrite">
-                  {typewriterText}
-                  <span className="typing-cursor"></span>
-                </span>
-              </span>
-            </p>
+            <div className="about-me-content">
+              <span className="about-me-greeting">Hello, I am </span>
+              <span className="about-me-name">Alex Douglas</span>
+            </div>
           </div>
           <div className="about-me-right">
             <div className="about-me-box">
@@ -347,7 +312,7 @@ const Page: React.FC = () => {
         <h1 className="section-title" id="featured-work-title">Featured Work</h1>
         <div id="featured-work-projects">
           <div className="single-featured-work" id="left-single">
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="featured-images" />
+            <img src="/pictures/proj_prev.png" alt="Place Holder" className="featured-images" />
             <h1 className="featured-title">Title One</h1>
             <p className="featured-text">Tech:</p>
             <div className="card-overlay">
@@ -358,7 +323,7 @@ const Page: React.FC = () => {
             </div>
           </div>
           <div className="single-featured-work" id="middle-single">
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="featured-images" />
+            <img src="/pictures/proj_prev.png" alt="Place Holder" className="featured-images" />
             <h1 className="featured-title">Title Two</h1>
             <p className="featured-text">Tech:</p>
             <div className="card-overlay">
@@ -369,12 +334,12 @@ const Page: React.FC = () => {
             </div>
           </div>
           <div className="single-featured-work" id="right-single">
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="featured-images" />
+            <img src="/pictures/proj_prev.png" alt="Place Holder" className="featured-images" />
             <h1 className="featured-title">Title Three</h1>
             <p className="featured-text">Tech:</p>
             <div className="card-overlay">
               <p className="card-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.
+                Under Construction!
               </p>
               <button className="learn-more-btn">Learn More</button>
             </div>
@@ -396,28 +361,64 @@ const Page: React.FC = () => {
         <h1 className="section-title">More Projects</h1>
         <div className="projects-grid-container">
           <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
+            <div className="proj-preview">PROJECT PREVIEW</div>
             <p>Project One</p>
+            <div className="project-overlay">
+              <p className="project-description">
+                Description of Project One. Coming soon!
+              </p>
+              <button className="project-button">Learn More</button>
+            </div>
           </div>
           <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
+            <div className="proj-preview">PROJECT PREVIEW</div>
             <p>Project Two</p>
+            <div className="project-overlay">
+              <p className="project-description">
+                Description of Project Two. Coming soon!
+              </p>
+              <button className="project-button">Learn More</button>
+            </div>
           </div>
           <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
+            <div className="proj-preview">PROJECT PREVIEW</div>
             <p>Project Three</p>
+            <div className="project-overlay">
+              <p className="project-description">
+                Description of Project Three. Coming soon!
+              </p>
+              <button className="project-button">Learn More</button>
+            </div>
           </div>
           <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
+            <div className="proj-preview">PROJECT PREVIEW</div>
             <p>Project Four</p>
+            <div className="project-overlay">
+              <p className="project-description">
+                Description of Project Four. Coming soon!
+              </p>
+              <button className="project-button">Learn More</button>
+            </div>
           </div>
           <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
+            <div className="proj-preview">PROJECT PREVIEW</div>
             <p>Project Five</p>
+            <div className="project-overlay">
+              <p className="project-description">
+                Description of Project Five. Coming soon!
+              </p>
+              <button className="project-button">Learn More</button>
+            </div>
           </div>
           <div>
-            <img src="/pictures/placeholder.png" alt="Place Holder" className="proj-pic" />
+            <div className="proj-preview">PROJECT PREVIEW</div>
             <p>Project Six</p>
+            <div className="project-overlay">
+              <p className="project-description">
+                Description of Project Six. Coming soon!
+              </p>
+              <button className="project-button">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
