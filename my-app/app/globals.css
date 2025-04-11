@@ -1183,6 +1183,14 @@ img.about-me-items {
     padding: 6px 12px;
     font-size: 12px;
   }
+
+  .footer p {
+    font-size: 16px;
+  }
+  
+  .heart {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1741,21 +1749,25 @@ img.about-me-items {
   background-color: #232323;
   color: #ffffff;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 10px 10px 20px 10px;
+  margin-top: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .footer p {
   font-size: 20px;
   margin: 0;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .heart {
   color: #ff0000;
   font-size: 22px;
-    display: inline-block;
+  display: inline-block;
   margin: 0 5px;
 }
 
@@ -1838,4 +1850,87 @@ img.about-me-items {
 
 .typewriter-container, .typewrite {
   display: none;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px 10px;
+  }
+  
+  .footer p {
+    font-size: 13px;
+    word-spacing: -1px;
+  }
+  
+  .heart {
+    font-size: 15px;
+    margin: 0 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer p {
+    font-size: 11px;
+    word-spacing: -2px;
+  }
+  
+  .heart {
+    font-size: 13px;
+    margin: 0 2px;
+  }
+}
+
+.social-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 8px 0;
+  gap: 12px;
+  background-color: #232323;
+  margin-top: 30px;
+}
+
+.social-bar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.social-bar-link:hover {
+  background-color: #444;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-bar-icon {
+  width: 24px;
+  height: 24px;
+  fill: #8A5CF7;
+}
+
+.social-bar-text {
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .social-bar {
+    gap: 10px;
+    padding: 12px 0;
+  }
+  
+  .social-bar-link {
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .social-bar-text {
+    display: none;
+  }
 }
