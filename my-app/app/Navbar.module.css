@@ -139,6 +139,59 @@
     z-index: 1000;
 }
 
+.sidebarDivider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 25px 0;
+}
+
+.sidebarSocials {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.sidebarSocialsTitle {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.sidebarSocialLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebarSocialLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 18px;
+}
+
+.sidebarSocialLink:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    color: white;
+    padding-left: 15px;
+}
+
+.sidebarSocialIcon {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
 @media (max-width: 920px) {
     .navbar {
         display: none !important;

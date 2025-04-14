@@ -1044,8 +1044,10 @@ img.about-me-items {
   }
   
   .single-featured-work {
-    width: 90%;
-    max-width: 500px;
+    width: 85%;
+    max-width: 450px;
+    border-width: 14px;
+    margin: 20px;
   }
   
   .about-me-content {
@@ -1175,13 +1177,13 @@ img.about-me-items {
   }
   
   .project-description {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
   }
   
   .project-button {
-    padding: 6px 12px;
-    font-size: 12px;
+    padding: 10px 20px;
+    font-size: 15px;
   }
 
   .footer p {
@@ -1332,6 +1334,24 @@ img.about-me-items {
   .project-overlay {
     height: 85%;
     padding: 12px;
+  }
+
+  .single-featured-work {
+    width: 85%;
+    max-width: 380px;
+    border-width: 12px;
+    margin: 15px;
+  }
+  
+  .featured-title {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .featured-text {
+    font-size: 15px;
+    padding-left: 25px;
+    margin-bottom: 15px;
   }
 }
 
@@ -1767,7 +1787,7 @@ img.about-me-items {
 .heart {
   color: #ff0000;
   font-size: 22px;
-  display: inline-block;
+    display: inline-block;
   margin: 0 5px;
 }
 
@@ -1932,5 +1952,38 @@ img.about-me-items {
   
   .social-bar-text {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-featured-work {
+    width: 85%;
+    max-width: 320px;
+    border-width: 10px;
+    margin: 12px;
+  }
+
+  .featured-title {
+    font-size: 22px;
+  }
+
+  .featured-text {
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .card-overlay {
+    padding: 10px;
+  }
+  
+  .card-description {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .learn-more-btn {
+    padding: 8px 16px;
+    font-size: 13px;
   }
 }
