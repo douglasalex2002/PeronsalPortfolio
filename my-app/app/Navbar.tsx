@@ -239,8 +239,36 @@ export default function Navbar() {
               borderRadius: "8px",
               width: "90%",
               maxWidth: "500px",
+              position: "relative"
             }}
           >
+            <button 
+              className="close-button" 
+              onClick={() => setShowOverlay(false)}
+              aria-label="Close"
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                background: "transparent",
+                border: "none",
+                color: "#ffffff",
+                fontSize: "24px",
+                cursor: "pointer",
+                padding: "5px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "30px",
+                height: "30px",
+                borderRadius: "50%",
+                transition: "background-color 0.3s ease"
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
             <div className="contact-header">
               <h3>Want to reach out?</h3>
               <p className="contact-email">
